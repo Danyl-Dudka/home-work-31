@@ -1,35 +1,27 @@
 peopleButton.addEventListener("click", () => {
-    parent.innerHTML = '';
     currentButton = "people"
-    infoUrl = `https://swapi.dev/api/${currentButton}`;
-    navigationDiv.classList.remove("active");
-    setTimeout(() => {
-        navigationDiv.classList.add("active");
-    }, 10);
-    loadData();
+    handlerButton ();
 });
 
 vehiclesButton.addEventListener('click', () => {
-    parent.innerHTML = '';
     currentButton = "vehicles";
-    infoUrl = `https://swapi.dev/api/${currentButton}`;
-    navigationDiv.classList.remove("active");
-    setTimeout(() => {
-        navigationDiv.classList.add("active");
-    }, 10);
-    loadData();
+    handlerButton();
 })
 
 planetsButton.addEventListener('click', () => {
-    parent.innerHTML = '';
     currentButton = "planets";
+    handlerButton();
+})
+
+function handlerButton () {
+    parent.innerHTML = '';
     infoUrl = `https://swapi.dev/api/${currentButton}`;
     navigationDiv.classList.remove("active");
     setTimeout(() => {
         navigationDiv.classList.add("active");
     }, 10);
     loadData();
-})
+}
 
 loadMoreButton.addEventListener('click', loadData);
 
